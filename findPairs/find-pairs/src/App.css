@@ -1,23 +1,43 @@
 .App {
-  text-align: center;
-}
-.p{
-  display: flex;
-  flex-wrap: wrap;
-}
-.main-body{
-  justify-content: start;
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
   width: 100vw;
   height: 100vh;
-  border: red solid 1px;
-}
-.inputSec{
+  text-align: center;
   display: flex;
-  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
+.card1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  width: 23.8%;
+  height:23.8%;
+  background-color: red;
+}
+.card{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  width: 23.8%;
+  height:23.8%;
+  background-color: #282c34;
+}
+*{
+  box-sizing: border-box;
+}
+.box{
+  align-items: center;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap:10px;
+  width: 50vw;
+  height: 50vw;
+  border: 1px red solid;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

@@ -2,11 +2,13 @@ import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react'
 const ToDoBox = (props) => {
+  console.log(props.isCompleted, 'asdasdasds')
+
   return (
-    <>
+    <div>
       <p>{props.text}</p>
-      <input type="checkbox" checked={props.isCompleted} />
-    </>
+      <input checked={props.isCompleted} onChange={() => props.arr[1](!props.arr[0][props.index].isCompleted)} type="checkbox"  />
+    </div>
   )
 }
 const addToDo = () => {
@@ -15,8 +17,14 @@ const addToDo = () => {
 
 
 function App() {
+  document.onkeydown = checkKey;
+  function checkKey(e){
+    console.log(e);
+  }
   const [a, b] = useState([]);
+  const complete = (ind)=> {
 
+  }
   return (
     <div id='bod' className='main-body'>
       <div className='inputSec'>
@@ -29,8 +37,8 @@ function App() {
           }
         }>+</button>
       </div>
-
-      {a.map((x,i) => <ToDoBox key={x.text+i} text={x.text} isCompleted={x.isCompleted}></ToDoBox>)}
+        {console.log('asdasdasd')}
+      {a.map((x,i) => <ToDoBox key={x.text+i} index={i} text={x.text} isCompleted={x.isCompleted} arr={[a,b]}></ToDoBox>)}
 
     </div>
   );
