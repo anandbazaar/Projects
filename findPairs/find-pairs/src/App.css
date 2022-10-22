@@ -29,7 +29,7 @@ p{
   width: 23.8%;
   height:23.8%;
   background-color: #282c34;
-  border: 5px yellow dotted;
+  border: 3px yellow dashed;
   border-radius: 10%;
 }
 .card{
@@ -49,9 +49,9 @@ p{
   padding: 10px;
   display: flex;
   flex-wrap: wrap;
-  gap:7px;
-  width: 30vw;
-  height: 30vw;
+  gap:10px;
+  width: 50vw;
+  height: 50vw;
   border: 1px red solid;
 }
 
