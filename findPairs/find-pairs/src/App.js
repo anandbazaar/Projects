@@ -34,10 +34,17 @@ function App() {
 
     return array;
   }
+  useEffect(() => {
+    shuffle(a, b)
+  },0)
 
   document.onkeydown = checkKey;
 
   function checkKey(e) {
+    if(e.keyCode == '32'){
+      document.getElementById('blor').style.animation = 'outBlur 1s forwards'
+
+    }
     if (e.keyCode == '38') {
       // up arrow
       d(c - 4)
@@ -57,13 +64,12 @@ function App() {
   }
 
 
-  useEffect(() => {
-    shuffle(a, b)
-  }, [])
+
 
 
   return (
     <div className="App">
+      <div id='blor' className='blor'><p>press 'space' to begin</p></div>
       <div className="box">
         {a.map((x, i) =>
           <Card value={x} index={i} selected={[c, d]}></Card>

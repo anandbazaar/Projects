@@ -6,6 +6,21 @@
   justify-content: center;
   align-items: center;
 }
+p{
+  opacity: 100%;
+}
+.blor{
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+  background-color: #282c34;
+  opacity: 70%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .card1{
   display: flex;
   justify-content: center;
@@ -13,7 +28,9 @@
   color: white;
   width: 23.8%;
   height:23.8%;
-  background-color: red;
+  background-color: #282c34;
+  border: 5px yellow dotted;
+  border-radius: 10%;
 }
 .card{
   display: flex;
@@ -32,9 +49,9 @@
   padding: 10px;
   display: flex;
   flex-wrap: wrap;
-  gap:10px;
-  width: 50vw;
-  height: 50vw;
+  gap:7px;
+  width: 30vw;
+  height: 30vw;
   border: 1px red solid;
 }
 
@@ -70,5 +87,14 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+@keyframes outBlur{
+  from{
+    opacity: 70%;
+  }
+  to{
+    opacity: 0%;
+    display: none;
   }
 }
