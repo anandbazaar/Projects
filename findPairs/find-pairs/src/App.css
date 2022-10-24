@@ -9,6 +9,9 @@
 p{
   opacity: 100%;
 }
+.blor.bruh{
+  opacity: 0%;
+}
 .blor{
   position: absolute;
   width: 100vw;
@@ -21,16 +24,20 @@ p{
   align-items: center;
   justify-content: center;
 }
-.card1{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  width: 23.8%;
-  height:23.8%;
+.card1.removed{
+  background-color: green;
+}
+.card.removed{
+  background-color: green;
+}
+.card.selected{
+  border: red 3px solid;
+}
+.card.card1{
+  border: 3px dashed yellow;
+}
+.card.normal{
   background-color: #282c34;
-  border: 3px yellow dashed;
-  border-radius: 10%;
 }
 .card{
   display: flex;
@@ -39,7 +46,6 @@ p{
   color: white;
   width: 23.8%;
   height:23.8%;
-  background-color: #282c34;
 }
 *{
   box-sizing: border-box;
@@ -96,5 +102,13 @@ p{
   to{
     opacity: 0%;
     display: none;
+  }
+}
+@keyframes inBlur{
+  from{
+    opacity: 0%;
+  }
+  to{
+    opacity: 70%;
   }
 }
