@@ -10,8 +10,8 @@ const ToBox = (props) =>{
   const handleCheck = () => {
     let newTodos = todos.map((todo, index) => {
       console.log(todo, 'todo')
-      todo = {...todo, isChecked: !todo.isChecked}
-
+      todo = index === props.index ? {...todo, isChecked: !todo.isChecked} : todo
+      return todo;
     });
 
     setTodos(newTodos)
