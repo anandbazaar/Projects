@@ -91,9 +91,6 @@ function App() {
 
 
   useEffect(() => {
-    function preview(){
-      a[curr.current[0]].isS=false;a[curr.current[1]].isS=false;curr.current=[];return;
-    }
     function shuffle() {
       b(prev => {
         const a = [...prev]
