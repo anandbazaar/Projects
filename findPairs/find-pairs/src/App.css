@@ -1,4 +1,5 @@
 .App {
+  overflow: hidden;
   width: 100vw;
   height: 100vh;
   text-align: center;
@@ -49,6 +50,7 @@ p{
 }
 *{
   box-sizing: border-box;
+  /* overflow: hidden; */
 }
 .box{
   align-items: center;
@@ -58,7 +60,24 @@ p{
   gap:10px;
   width: 50vw;
   height: 50vw;
-  border: 1px red solid;
+}
+.bigFrame{
+  z-index: -1;
+  width:200vw;
+  height: 100vh;
+  border:1px red solid;
+  position: absolute;
+  left: 0px;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  background: linear-gradient(
+    to right,
+    #D01B1B 0%, 
+    #FF4242 50%, 
+    #e7f9ff 50%, 
+    #95D2EC 100%
+  );
 }
 
 .App-logo {
