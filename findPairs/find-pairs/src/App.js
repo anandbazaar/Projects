@@ -17,6 +17,9 @@ const Card = (props) => {
 };
 
 function App() {
+  let scores = useRef([0,0])
+  let turn = useRef(1)
+  let backGround = useRef();
   let correctlyGuessed = useRef(0);
   let Selections = useRef([]);
   const [selectionCounter, selectionCounterChanger] = useState(0);
@@ -29,7 +32,7 @@ function App() {
     { value: 3, isSelected: false, isRemoved: false },
     { value: 3, isSelected: false, isRemoved: false },
     { value: 4, isSelected: false, isRemoved: false },
-    { value: 4, isSelected: false,   },
+    { value: 4, isSelected: false, isRemoved: false },
     { value: 5, isSelected: false, isRemoved: false },
     { value: 5, isSelected: false, isRemoved: false },
     { value: 6, isSelected: false, isRemoved: false },
@@ -43,7 +46,6 @@ function App() {
   if (correctlyGuessed.current === 8) {
     document.getElementById("bruh").style.animation = "inBlur 1s forwards";
   }
-
   document.onkeydown = checkKey;
   function checkKey(e) {
     if (
@@ -60,6 +62,8 @@ function App() {
           cards[Selections.current[0]].value ===
           cards[Selections.current[1]].value
         ) {
+          if(turn.current % 2 === 0){scores.current[1]++}
+          else{scores.current[0]++}
           cards[Selections.current[0]].isRemoved = true;
           cards[Selections.current[1]].isRemoved = true;
           Selections.current = [];
@@ -68,10 +72,12 @@ function App() {
           return;
         }
         selectionCounterChanger(100);
-
+        backGround.current.style.animation = turn.current % 2 === 0 ? "switchPlayer1 1s ease-out forwards" :"switchPlayer2 1s ease-out forwards";
+        turn.current++;
         setTimeout(() => {
           cards[Selections.current[0]].isSelected = false;
           cards[Selections.current[1]].isSelected = false;
+          
           Selections.current = [];
           selectionCounterChanger(0);
           return;
@@ -139,9 +145,9 @@ function App() {
         <p>press 'space' to begin</p>
       </div>
       <div id="bruh" style={{}} className="blor bruh">
-        You Win!
+        {scores.current[0]>scores.current[1] ? <p>player 1 wins</p> : (scores.current[0]<scores.current[1] ? <p>player 2 wins</p> : <p>tie</p>)}
       </div>
-      <div className="bigFrame"><p>player1:</p><p>player2:</p></div>
+      <div ref={backGround} className="bigFrame"><div className="scoreBox"><p>player 1:</p><h1>{scores.current[0]}</h1></div><div className="scoreBox"><p>player 2:</p><h1>{scores.current[1]}</h1></div></div>
       <div className="box">
         {cards.map((x, i) => (
           <Card

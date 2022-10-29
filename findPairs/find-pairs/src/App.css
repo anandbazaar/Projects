@@ -1,3 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+p{
+  color: white;
+  font-size:30px;
+}
+h1{
+  color: yellow;
+}
+.scoreBox{
+  display: flex;
+  flex-direction: column;
+}
+
 .App {
   overflow: hidden;
   width: 100vw;
@@ -32,7 +45,7 @@ p{
   background-color: green;
 }
 .card.selected{
-  border: red 3px solid;
+  border: yellow 3px solid;
 }
 .card.card1{
   border: 3px dashed yellow;
@@ -49,8 +62,9 @@ p{
   height:23.8%;
 }
 *{
+  font-family: 'Press Start 2P', cursive;
   box-sizing: border-box;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 .box{
   align-items: center;
@@ -62,21 +76,25 @@ p{
   height: 50vw;
 }
 .bigFrame{
+  padding: 10%;
+  padding-left: 5%;
+  padding-right: 5%;
   z-index: -1;
   width:200vw;
   height: 100vh;
-  border:1px red solid;
   position: absolute;
   left: 0px;
   overflow: hidden;
   display: flex;
   justify-content: space-between;
-  background: linear-gradient(
+  background-image: linear-gradient(
     to right,
-    #D01B1B 0%, 
-    #FF4242 50%, 
-    #e7f9ff 50%, 
-    #95D2EC 100%
+    #1034A6, 
+    #412F88, 
+    #722B6A, 
+    #A2264B,
+    #D3212D,
+    #F62D2D
   );
 }
 
@@ -129,5 +147,21 @@ p{
   }
   to{
     opacity: 70%;
+  }
+}
+@keyframes switchPlayer2{
+  from{
+    left: 0px;
+  }
+  to{
+    left: -100vw;
+  }
+}
+@keyframes switchPlayer1{
+  from{
+    left: -100vw;
+  }
+  to{
+    left: 0px;
   }
 }
