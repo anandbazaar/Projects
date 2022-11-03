@@ -1,18 +1,21 @@
-.HeaderItem{
-    text-decoration: none;
-    color: white;
-    margin: 20px;
-    font-size: 16px;
-    font-weight: bolder;
+.HeaderItem {
+  text-decoration: none;
+  color: white;
+  margin: 20px;
+  font-size: 16px;
+  font-weight: bolder;
 }
-.header{
-    position: absolute;
-    top:0px;
-    padding-left: 10%;
-    padding-right: 10%;
-    align-items: center;
-    height:5vh;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+.header {
+  position: fixed;
+  top: 0px;
+  padding-left: 10%;
+  padding-right: 10%;
+  align-items: center;
+  height: 5vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.loogo {
+  font-size: 30px;
 }

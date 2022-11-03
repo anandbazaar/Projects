@@ -1,6 +1,48 @@
 .part1 {
-  color: white;
-  border: 1px red solid;
+  background-image: url(../asset/brooke-cagle-cb4Dv50LN1Y-unsplash\ 1.jpg);
   width: 100vw;
   height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+}
+.EmailInput {
+  gap: 40px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  font-family: "mulish";
+  color: white;
+  width: 75%;
+  height: 50%;
+}
+h1 {
+  font-weight: bolder;
+  text-align: left;
+  font-size: 50px;
+  width: 35%;
+}
+.descrip {
+  width: 20%;
+  text-align: left;
+  font-weight: bold;
+  line-height: 25px;
+}
+.in {
+  box-shadow: 1px 1px 10px 1px;
+  border: 1px black solid;
+  padding: 10px;
+  width: 20%;
+  height: 50px;
+}
+.emails {
+  gap: 20px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+button {
+  color: red;
 }
