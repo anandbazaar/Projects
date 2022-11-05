@@ -1,0 +1,57 @@
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.part1 {
+  border-radius: 30px;
+  background-color: white;
+  height: 440px;
+  width: fit-content;
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.headerImage {
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+.title {
+  text-align: left;
+  padding-left: 20px;
+  padding-top: 20px;
+  font-family: "Mulish";
+  font-weight: bold;
+  font-size: 24px;
+}
+.textPart {
+  border: 1px red solid;
+  height: 100%;
+  width: 370px;
+}
+.desc {
+  font-weight: bold;
+  text-align: left;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-family: "Mulish";
+  font-size: 14px;
+}
+.iden {
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  padding-top: 50px;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  color: #6d7d8b;
+}
+.sep {
+  padding-left: 10px;
+}
+.nameDate {
+  padding-left: 10px;
+}

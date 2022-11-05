@@ -1,0 +1,40 @@
+.HeaderItem {
+  text-decoration: none;
+  color: white;
+  margin: 20px;
+  font-size: 16px;
+  font-weight: bolder;
+}
+.header {
+  z-index: 10;
+  position: fixed;
+  top: 0px;
+  padding-left: 10%;
+  padding-right: 10%;
+  align-items: center;
+  height: 5vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header2 {
+  z-index: 10;
+  position: fixed;
+  top: 0px;
+  padding-left: 10%;
+  padding-right: 10%;
+  align-items: center;
+  height: 5vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: #f5f7fa;
+}
+.HeaderItem2 {
+  text-decoration: none;
+  color: #6d7d8b;
+  margin: 20px;
+  font-size: 16px;
+  font-weight: bolder;
+}
