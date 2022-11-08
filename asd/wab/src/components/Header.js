@@ -2,18 +2,21 @@ import {
   Link,
   useLocation,
 } from "../../node_modules/react-router-dom/dist/index";
+import Form from "react-bootstrap/Form";
 import style from "../styles/Header.module.css";
 import logo from "../asset/team..svg";
 import logo2 from "../asset/teem.svg";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { ThemeContext } from "../common/ThemeProvider";
 export const Header = (props) => {
   const location = useLocation();
   const [a, b] = useState(true);
+  const { theme, changeTheme } = useContext(ThemeContext);
   useEffect(() => {
     if (location.pathname !== "/") b(true);
     else b(false);
-    console.log(a);
-  }, [location]);
+    console.log(theme);
+  }, [location, theme]);
 
   return (
     <div className={a === false ? style.header : style.header2}>
@@ -26,6 +29,15 @@ export const Header = (props) => {
         </Link>
       </div>
       <div>
+        <Form>
+          <Form.Check
+            onChange={() => {
+              changeTheme();
+            }}
+            type="switch"
+            id="custom-switch"
+          />
+        </Form>
         <Link
           className={a === false ? style.HeaderItem : style.HeaderItem2}
           to="/products"
