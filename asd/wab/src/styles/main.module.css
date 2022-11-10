@@ -46,3 +46,25 @@ h1 {
 button {
   color: red;
 }
+.part2 {
+  overflow-x: hidden;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  border: 1px red solid;
+  display: flex;
+  align-items: center;
+}
+.ReviewCont {
+  flex-wrap: nowrap;
+  display: flex;
+  flex-direction: row;
+  height: 400px;
+  width: fit-content;
+}
+.forward {
+  width: 20px;
+  left: calc((100vw) / 2);
+  position: absolute;
+  bottom: 0px;
+}
