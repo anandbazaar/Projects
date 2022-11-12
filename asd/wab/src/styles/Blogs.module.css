@@ -1,5 +1,6 @@
 .back {
   width: 100vw;
+  height: fit-content;
   top: 5vh;
   position: absolute;
   background-color: #f5f7fa;
@@ -7,4 +8,21 @@
   padding-top: 5%;
   display: flex;
   flex-direction: column;
+}
+.backdark {
+  height: fit-content;
+  width: 100vw;
+  top: 5vh;
+  position: absolute;
+  background-color: #000000;
+  padding-left: 11%;
+  padding-top: 5%;
+  display: flex;
+  flex-direction: column;
+}
+.blogCont {
+  gap: 50px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }

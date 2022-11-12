@@ -14,7 +14,14 @@
   flex-direction: column;
   align-items: center;
 }
+.profImag {
+  border-radius: 2em;
+  height: 40px;
+  width: 40px;
+}
 .headerImage {
+  min-width: 100%;
+  max-height: 30%;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
 }
@@ -41,7 +48,7 @@
 }
 .iden {
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   padding: 20px;
   padding-top: 50px;
   display: flex;

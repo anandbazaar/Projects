@@ -7,6 +7,7 @@
   justify-content: center;
   background-size: cover;
 }
+
 .EmailInput {
   gap: 40px;
   display: flex;
@@ -51,9 +52,17 @@ button {
   position: relative;
   width: 100vw;
   height: 100vh;
-  border: 1px red solid;
   display: flex;
   align-items: center;
+}
+.part2dark {
+  overflow-x: hidden;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-color: black;
 }
 .ReviewCont {
   flex-wrap: nowrap;
@@ -64,7 +73,13 @@ button {
 }
 .forward {
   width: 20px;
-  left: calc((100vw) / 2);
+  left: calc((100vw) / 1.5);
+  position: absolute;
+  bottom: 0px;
+}
+.backward {
+  width: 20px;
+  left: calc((100vw) / 3);
   position: absolute;
   bottom: 0px;
 }

@@ -1,21 +1,23 @@
 import style from "../styles/main.module.css";
 import data from "../data/reviewData.json";
-import { useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import Form from "react-bootstrap/Form";
 import { Button } from "react-bootstrap";
 import { Footer, Review } from "../components/index";
 import { Prev } from "../../node_modules/react-bootstrap/esm/PageItem";
 import { v4 as uuidv4 } from "uuid";
-
+import { ThemeContext } from "../common/ThemeProvider";
+import axios from "../../node_modules/axios/index";
 const goRight = (props) => {
   props[1](props[0] + 1);
 };
+const goLeft = (props) => {
+  props[1](props[0] - 1);
+};
 export const Home = (props) => {
-
+  const { theme, changeTheme } = useContext(ThemeContext);
   const [index, IndexC] = useState(0);
-  const [ReviewCount, ReviewCountChange] = useState(
-    Array.apply(null, { length: 5 })
-  );
+  const back = useRef();
   const [inputText, inputTextChanger] = useState("");
   return (
     <div>
@@ -43,16 +45,26 @@ export const Home = (props) => {
           </div>
         </div>
       </div>
-      <div className={style.part2}>
+      <div
+        ref={back}
+        className={theme.palette.dark ? style.part2dark : style.part2}
+      >
         <div
           className={style.ReviewCont}
           style={{
-            transform: `translateX(${-(100 / ReviewCount.length) * index}% `,
+            transform: `translateX(${-(100 / data.Da.length) * index}% `,
             transition: "300ms",
           }}
         >
-          {ReviewCount.map((x, i) => {
-            return <Review key={uuidv4()} starCount = {null} />;
+          {data.Da.map((x, i) => {
+            return (
+              <Review
+                key={uuidv4()}
+                starCount={x.numStar}
+                text={x.text}
+                pfp={x.pfp}
+              />
+            );
           })}
         </div>
         <Button
@@ -60,9 +72,18 @@ export const Home = (props) => {
             goRight([index, IndexC]);
           }}
           className={style.forward}
-        ></Button>  
+        >
+          F
+        </Button>
+        <Button
+          onClick={() => {
+            goLeft([index, IndexC]);
+          }}
+          className={style.backward}
+        >
+          B
+        </Button>
       </div>
-      <Footer />
     </div>
   );
 };

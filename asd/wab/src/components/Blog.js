@@ -9,7 +9,7 @@ export const Blog = (props) => {
         <p className={styles.title}>{props.Title}</p>
         <p className={styles.desc}>{props.desc}</p>
         <div className={styles.iden}>
-          <img src={props.profImag}></img>
+          <img className={styles.profImag} src={props.profImag}></img>
           <p className={styles.nameDate}>{props.name}</p>
           <p className={styles.sep}>|</p>
           <p className={styles.nameDate}>{props.date}</p>

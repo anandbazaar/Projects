@@ -1,5 +1,5 @@
 import "./App.css";
-import { Review, Header, Blog } from "./components";
+import { Review, Header, Blog, Footer } from "./components";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Home } from "./pages/Home.js";
 import { Products } from "./pages/Products.js";
@@ -27,6 +27,7 @@ function App() {
             <Route path={"/LogIn"} element={<LogIn />} />
             <Route path={"/GetAccess"} element={<GetAccess />} />
           </Routes>
+          <Footer />
         </div>
       </BrowserRouter>
     </ThemeProvider>

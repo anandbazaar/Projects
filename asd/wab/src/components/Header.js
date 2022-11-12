@@ -15,7 +15,6 @@ export const Header = (props) => {
   useEffect(() => {
     if (location.pathname !== "/") b(true);
     else b(false);
-    console.log(theme);
   }, [location, theme]);
 
   return (
