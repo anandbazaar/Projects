@@ -31,6 +31,9 @@ export const BlogPage = (props) => {
       .catch((err) => {
         console.log(err);
       });
+      return () => {
+        
+      }
   }, [page, limit]);
   const { theme, themeChanger } = useContext(ThemeContext);
   console.log(datar);

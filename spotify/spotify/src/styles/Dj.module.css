@@ -1,0 +1,114 @@
+.hidden{
+    
+    width: 22vw;
+    position: fixed;
+    right: -19vw;
+    height: 100vh;
+    background-color: #2d2d2d;
+    transition: 0.5s;
+    box-shadow: black 10px 0px 1000px 5px;
+}
+.exposed{
+    
+    display: flex;
+    justify-content: center;
+    right: 0vw;
+    width: 22vw;
+    position: fixed;
+    height: 100vh;
+    background-color: #2d2d2d;
+    transition: 0.5s;
+    box-shadow: black 10px 0px 1000px 400px;
+}
+
+.sideBarOpened{
+    position: absolute;
+    top:10%;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    width:20vw;
+    height:20vw;
+    border-radius: 100%;
+    background-color: #414141;
+    animation: rot 2.5s infinite linear;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation-play-state: paused;
+
+
+}
+.sideBarClosed{
+    position: absolute;
+    left: 0.25vw;
+    top: 0.25vw;
+    width:2.5vw;
+    height:2.5vw;
+    border-radius: 100%;
+    background-color: #414141;
+    animation: rot 2.5s infinite linear;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation-play-state: paused;
+}
+@keyframes rot{
+    from { transform: rotate(0deg);}
+    to { transform: rotate(360deg); }
+}
+.songCover{
+    pointer-events: none;
+    border-radius: 100%;
+    left: 0px;
+    top:0px;
+    position:absolute;
+    width:100%;
+    height:100%;
+}
+.innerOpened{
+    position: relative;
+    width:12vw;
+    height:12vw;
+    border-radius: 100%;
+}
+.innerClosed{
+    position: relative;
+    width:1.5vw;
+    height:1.5vw;
+
+    border-radius: 2em
+}
+.pin{
+    position: absolute;
+    z-index: 10;
+    top:0px;
+    bottom: 0px;
+    left: 0; 
+    right: 0; 
+    margin:auto;
+    width: 10%;
+    height:10%;
+    background-color: #2d2d2d;
+    border-radius: 100%;
+}
+.title{
+    position: absolute;
+    width:fit-content;
+    left: 0px;
+    right:0px;
+    margin: auto;
+    color:white;
+    bottom:30%;
+    font-family: 'Figtree', sans-serif;
+    font-size: 30px;
+}
+.control{
+    display: none;
+    position: absolute;
+    bottom: 15%;
+    left: 0px;
+    right:0px;
+    width:fit-content;
+    margin: auto;
+}
