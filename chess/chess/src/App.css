@@ -1,0 +1,13 @@
+.Frame{
+  display: flex;
+  flex-wrap: wrap;
+  width:40vw;
+  height:40vw;
+  border:1px red solid
+}
+.App{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

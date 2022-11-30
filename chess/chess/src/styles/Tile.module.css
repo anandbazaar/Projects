@@ -1,0 +1,15 @@
+.whiteTile{
+    color:black;
+    box-sizing: border-box;
+    width:12.5%;
+    height:12.5%;
+
+}
+.blackTile{
+    background-color: black;
+    color:white;
+    box-sizing: border-box;
+    width:12.5%;
+    height:12.5%;
+
+}
