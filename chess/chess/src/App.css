@@ -1,13 +1,18 @@
-.Frame{
-  display: flex;
-  flex-wrap: wrap;
-  width:40vw;
-  height:40vw;
-  border:1px red solid
+.Frame {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  width: 40vw;
+  height: 40vw;
+  border: 10px brown solid;
 }
-.App{
+.App {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.prevent-select {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }

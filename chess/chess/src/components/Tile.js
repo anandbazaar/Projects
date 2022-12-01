@@ -1,5 +1,12 @@
-import styles from "../styles/Tile.module.css"
-export const Tile = (props) =>{
-    if(props.color === 'black') return(<div className={styles.blackTile}>{props.order}</div>)
-    if(props.color === 'white')return(<div className={styles.whiteTile}>{props.order}</div>)
-}
+import styles from "../styles/Tile.module.css";
+import { Piece } from "./pieces";
+
+export const Tile = (props) => {
+  const { index, piece } = props;
+
+  return (
+    <div className={styles.tile}>
+      {/* <Piece positions={props.positions} order={props.order}></Piece> */}
+    </div>
+  );
+};
