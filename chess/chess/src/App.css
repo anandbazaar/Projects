@@ -1,6 +1,6 @@
 .Frame {
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   width: 40vw;
   height: 40vw;
   border: 10px brown solid;

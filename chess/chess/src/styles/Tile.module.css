@@ -1,20 +1,19 @@
 .whiteTile {
-  text-align: center;
-  font-size: 300%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: black;
   box-sizing: border-box;
   width: 12.5%;
   height: 12.5%;
 }
 .blackTile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: rgb(126, 148, 93);
   color: white;
   box-sizing: border-box;
   width: 12.5%;
   height: 12.5%;
-}
-.tile {
-  width: 100%;
-  height: 100%;
-  border: 1px solid black;
 }

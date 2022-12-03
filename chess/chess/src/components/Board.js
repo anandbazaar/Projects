@@ -1,6 +1,7 @@
 import { Tile } from "./Tile";
 import { v4 as uuidv4 } from "uuid";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useTransition } from "react";
+import { Rook } from "./pieces";
 
 const initBoard = () => {
   const board = [];
@@ -8,7 +9,25 @@ const initBoard = () => {
   for (let i = 0; i < 8; i++) {
     const row = [];
     for (let j = 0; j < 8; j++) {
-      row.push({ piece: "rook" });
+      switch (i) {
+        case 0:
+          if (j === 0) row.push({ piece: <Rook /> });
+          else if (j === 5) row.push({ piece: <Rook /> });
+          else row.push({ piece: null });
+          break;
+        case 1:
+          row.push({ piece: null });
+          break;
+        case 6:
+          row.push({ piece: null });
+          break;
+        case 6:
+          row.push({ piece: null });
+          break;
+        default:
+          row.push({ piece: null });
+          break;
+      }
     }
     board.push(row);
   }
@@ -19,44 +38,29 @@ const initBoard = () => {
 export const Board = (props) => {
   const [board, setBoard] = useState(initBoard());
   const [current, setCurrent] = useState(null);
-  const [currentPositions, setCurrentPositions] = useState([]);
-
-  // const OrderedBoard = [];
-
-  // for (let i = 0; i < 8; i++) {
-  //   OrderedBoard.push(
-  //     ChessBoard[i].map((x, a) => {
-  //       if ((a % 2 === 0 && i % 2 === 0) || (a % 2 !== 0 && i % 2 !== 0))
-  //         return (
-  //           <Tile
-  //             positions={[currentPositions, setCurrentPositions]}
-  //             color={"white"}
-  //             key={uuidv4()}
-  //             order={[i, a]}
-  //           ></Tile>
-  //         );
-  //       if ((a % 2 !== 0 && i % 2 === 0) || (a % 2 === 0 && i % 2 !== 0))
-  //         return (
-  //           <Tile
-  //             positions={[currentPositions, setCurrentPositions]}
-  //             color={"black"}
-  //             key={uuidv4()}
-  //             order={[i, a]}
-  //           ></Tile>
-  //         );
-  //     })
-  //   );
-  // }
+  const OrderedBoard = [];
+  for (let i = 0; i < 8; i++) {
+    OrderedBoard.push(
+      board[i].map((x, a) => {
+        return (
+          <Tile
+            setCurrent={setCurrent}
+            key={a}
+            row={i}
+            index={a}
+            piece={x}
+          ></Tile>
+        );
+      })
+    );
+  }
 
   useEffect(() => {
     if (!current) return;
+    if (current[0] === "Rook") {
+      console.log(current[0], current[1]);
+    }
   }, [current]);
 
-  return (
-    <>
-      {board.flat().map((cell, index) => (
-        <Tile key={index} index={index} {...cell} />
-      ))}
-    </>
-  );
+  return OrderedBoard;
 };

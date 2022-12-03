@@ -1,1 +1,1 @@
-export { Piece } from "./Piece.js";
+export { Rook } from "./Rook.js";
