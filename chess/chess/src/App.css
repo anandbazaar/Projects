@@ -3,13 +3,13 @@
   flex-wrap: wrap;
   width: 40vw;
   height: 40vw;
-  border: 10px brown solid;
 }
 .App {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: rgb(48, 46, 43);
 }
 .prevent-select {
   -webkit-user-select: none; /* Safari */

@@ -6,6 +6,7 @@
   box-sizing: border-box;
   width: 12.5%;
   height: 12.5%;
+  background-color: rgb(235, 236, 211);
 }
 .blackTile {
   display: flex;
@@ -13,6 +14,15 @@
   align-items: center;
   background-color: rgb(126, 148, 93);
   color: white;
+  box-sizing: border-box;
+  width: 12.5%;
+  height: 12.5%;
+}
+.moveableTile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
   box-sizing: border-box;
   width: 12.5%;
   height: 12.5%;

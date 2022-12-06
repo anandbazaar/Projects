@@ -12,7 +12,6 @@ const initBoard = () => {
       switch (i) {
         case 0:
           if (j === 0) row.push({ piece: <Rook /> });
-          else if (j === 5) row.push({ piece: <Rook /> });
           else row.push({ piece: null });
           break;
         case 1:
@@ -21,7 +20,7 @@ const initBoard = () => {
         case 6:
           row.push({ piece: null });
           break;
-        case 6:
+        case 7:
           row.push({ piece: null });
           break;
         default:
@@ -36,6 +35,8 @@ const initBoard = () => {
 };
 
 export const Board = (props) => {
+  const [pos, setPos] = useState([0, 0]);
+  const [moveable, setMoveable] = useState(null);
   const [board, setBoard] = useState(initBoard());
   const [current, setCurrent] = useState(null);
   const OrderedBoard = [];
@@ -44,6 +45,8 @@ export const Board = (props) => {
       board[i].map((x, a) => {
         return (
           <Tile
+            setPos={setPos}
+            moveable={moveable}
             setCurrent={setCurrent}
             key={a}
             row={i}
@@ -58,7 +61,14 @@ export const Board = (props) => {
   useEffect(() => {
     if (!current) return;
     if (current[0] === "Rook") {
-      console.log(current[0], current[1]);
+      const [CurrentPosX, CurrentPosY] = current[1];
+      const tempMove = [];
+      for (let x = 0; x < 8; x++) {
+        if (x !== CurrentPosY) tempMove.push([CurrentPosX, x]);
+        if (x !== CurrentPosX) tempMove.push([x, CurrentPosY]);
+      }
+      setMoveable(tempMove);
+      console.log(current[0], moveable);
     }
   }, [current]);
 
