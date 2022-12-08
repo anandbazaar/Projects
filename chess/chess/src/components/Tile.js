@@ -7,13 +7,19 @@ export const Tile = (props) => {
   let MoveTile = false;
   if (props.moveable[0]) {
     console.log(props.moveable[0]);
-    for (let i = 0; i < props.moveable[0].length; i++) {
-      if (
-        props.moveable[0][i][0] === props.row &&
-        props.moveable[0][i][1] === props.index &&
-        props.piece.piece === null
-      ) {
-        MoveTile = true;
+    // for (let i = 0; i < props.moveable[0].length; i++) {
+    //   if (
+    //     props.moveable[0][i][0] === props.row &&
+    //     props.moveable[0][i][1] === props.index &&
+    //     props.piece.piece === null
+    //   ) {
+    //     MoveTile = true;
+    //   }
+    // }
+    let left = true;
+    for (let i = positions.W1rook[1]; i > -1 || i < 8; ) {
+      if (left && positions.W1rook[1] !== 0) {
+        i--;
       }
     }
   }
