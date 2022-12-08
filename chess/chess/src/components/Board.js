@@ -11,7 +11,7 @@ const initBoard = () => {
     for (let j = 0; j < 8; j++) {
       switch (i) {
         case 0:
-          if (j === 0) row.push({ piece: <Rook /> });
+          if (j === 0) row.push({ piece: <Rook id="WR1" /> });
           else row.push({ piece: null });
           break;
         case 1:
@@ -68,7 +68,7 @@ export const Board = (props) => {
         if (x !== CurrentPosX) tempMove.push([x, CurrentPosY]);
       }
       setMoveable(tempMove);
-      console.log(current[0], moveable);
+      console.log(pos);
     }
   }, [current]);
 
