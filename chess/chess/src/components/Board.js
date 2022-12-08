@@ -11,7 +11,8 @@ const initBoard = () => {
     for (let j = 0; j < 8; j++) {
       switch (i) {
         case 0:
-          if (j === 0) row.push({ piece: <Rook id="WR1" /> });
+          if (j === 0) row.push({ piece: <Rook /> });
+          else if (j === 7) row.push({ piece: <Rook /> });
           else row.push({ piece: null });
           break;
         case 1:
@@ -30,7 +31,6 @@ const initBoard = () => {
     }
     board.push(row);
   }
-
   return board;
 };
 
@@ -46,8 +46,8 @@ export const Board = (props) => {
         return (
           <Tile
             setPos={setPos}
-            moveable={moveable}
-            setCurrent={setCurrent}
+            moveable={[moveable, setMoveable]}
+            setCurrent={[current, setCurrent]}
             key={a}
             row={i}
             index={a}
