@@ -16,12 +16,6 @@ export const Tile = (props) => {
     //     MoveTile = true;
     //   }
     // }
-    let left = true;
-    for (let i = positions.W1rook[1]; i > -1 || i < 8; ) {
-      if (left && positions.W1rook[1] !== 0) {
-        i--;
-      }
-    }
   }
 
   const choose = () => {
