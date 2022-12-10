@@ -42,8 +42,6 @@ export const Tile = (props) => {
         go(props.setCurrent[0][1])
     //   }
     // }
-    
-
   }
 
   const choose = () => {
