@@ -4,24 +4,46 @@ import positions from "./pieces/positions.json";
 import { Rook } from "./pieces";
 
 export const Tile = (props) => {
+  const goRight = (x,y)=>{
+    if(y>=8 || props.piece.piece !== null) return
+    if(props.row === x && props.index === y) MoveTile = true
+    goRight(x,y+1)
+  }
+  const goLeft = (x,y)=>{
+    if(y<=-1) return
+    if(props.row === x && props.index === y) MoveTile = true
+    goLeft(x,y-1)
+  }
+  const goDown = (x,y)=>{
+    if(x>=8) return
+    if(props.row === x && props.index === y) MoveTile = true
+    goDown(x+1,y)
+  }
+  const goUp = (x,y)=>{
+    console.log(x)
+    if(x<=-1) return
+    if(props.row === x && props.index === y) MoveTile = true
+    goUp(x-1,y)
+  }
+
+  const go = (arr)=>{
+    goRight(arr[0],arr[1]+1)
+    goLeft(arr[0],arr[1]-1)
+    goUp(arr[0]-1,arr[1])
+    goDown(arr[0]+1,arr[1])
+  }
   let MoveTile = false;
   if (props.moveable[0]) {
-    console.log(props.moveable[0]);
     // for (let i = 0; i < props.moveable[0].length; i++) {
     //   if (
     //     props.moveable[0][i][0] === props.row &&
-    //     props.moveable[0][i][1] === props.index &&
-    //     props.piece.piece === null
+    //     props.moveable[0][i][1] === props.index
     //   ) {
-    //     MoveTile = true;
+        go(props.setCurrent[0][1])
     //   }
     // }
-    let left = true;
-    for (let i = positions.W1rook[1]; i > -1 || i < 8; ) {
-      if (left && positions.W1rook[1] !== 0) {
-        i--;
-      }
-    }
+    
+
   }
 
   const choose = () => {

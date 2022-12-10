@@ -19,7 +19,9 @@ const initBoard = () => {
           row.push({ piece: null });
           break;
         case 6:
-          row.push({ piece: null });
+          if (j === 4) row.push({ piece: <Rook /> });
+          else row.push({ piece: null });
+          // row.push({ piece: null });
           break;
         case 7:
           row.push({ piece: null });
