@@ -1,4 +1,4 @@
-export const King = () =>{
+export const WKing = () =>{
   return(
     <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45">
   <g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5">
