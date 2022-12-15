@@ -1,89 +1,122 @@
 import { useState } from "react";
 import styles from "../styles/Tile.module.css";
-import { WBishop, Bking, WKing, WKnight, WPawn, WQueen, WRook, BPawn, BRook, BKnight, BBishop, BQueen } from "./pieces";
+import {
+  WBishop,
+  Bking,
+  WKing,
+  WKnight,
+  WPawn,
+  WQueen,
+  WRook,
+  BPawn,
+  BRook,
+  BKnight,
+  BBishop,
+  BQueen,
+} from "./pieces";
 
 export const Tile = (props) => {
   let MoveTile = false;
-  let capturable = false
+  let capturable = false;
   if (props.moveable[0]) {
     for (let i = 0; i < props.moveable[0].length; i++) {
       if (
         props.moveable[0][i][0] === props.row &&
         props.moveable[0][i][1] === props.index
       ) {
-        MoveTile=true
+        MoveTile = true;
       }
-      if(props.moveable[0][i][0] === props.row &&
+      if (
+        props.moveable[0][i][0] === props.row &&
         props.moveable[0][i][1] === props.index &&
-        props.piece.piece !== null) {
-          capturable=true
-        }
+        props.piece.piece !== null
+      ) {
+        capturable = true;
+      }
     }
   }
 
   const choose = () => {
-    if(props.piece.piece !== null){
-      if(props.piece.piece.type.name.slice(0,1) === props.enemy[0]) return
-    props.setCurrent[1]([
-      props.piece.piece.type.name,
-      [props.row, props.index],
-    ]);
-    return}
+    if (props.piece.piece !== null) {
+      if (props.piece.piece.type.name.slice(0, 1) === props.enemy[0]) return;
+      props.setCurrent[1]([
+        props.piece.piece.type.name,
+        [props.row, props.index],
+      ]);
+      return;
+    }
     props.moveable[1]([]);
     props.setCurrent[1](null);
   };
   const move = (pos) => {
-    switch(props.setCurrent[0][0]){
-      case 'WRook' :
-        props.piece.piece = <WRook/>
+    switch (props.setCurrent[0][0]) {
+      case "WRook":
+        props.piece.piece = <WRook />;
         break;
-      case 'BRook' :
-        props.piece.piece = <BRook/>
+      case "BRook":
+        props.piece.piece = <BRook />;
         break;
-      case 'WBishop' :
-        props.piece.piece = <WBishop/>
+      case "WBishop":
+        props.piece.piece = <WBishop />;
         break;
-      case 'BBishop' :
-        props.piece.piece = <BBishop/>
+      case "BBishop":
+        props.piece.piece = <BBishop />;
         break;
-      case 'WKnight' :
-        props.piece.piece = <WKnight/>
+      case "WKnight":
+        props.piece.piece = <WKnight />;
         break;
-      case 'BKnight':
-        props.piece.piece = <BKnight/>
+      case "BKnight":
+        props.piece.piece = <BKnight />;
         break;
-      case 'WQueen' :
-        props.piece.piece = <WQueen/>
+      case "WQueen":
+        props.piece.piece = <WQueen />;
         break;
-      case 'BQueen':
-        props.piece.piece = <BQueen/>
-        break
-      case 'WKing' :
-        props.piece.piece = <WKing/>
+      case "BQueen":
+        props.piece.piece = <BQueen />;
         break;
-      case 'Bking' :
-        props.piece.piece = <Bking/>
+      case "WKing":
+        props.piece.piece = <WKing />;
+        if (props.setCurrent[0][1][1] - props.index > 1) {
+          props.board[props.row][props.index - 1].piece = null;
+          props.board[props.row][props.index + 1].piece = <WRook />;
+        }
+        if (props.index - props.setCurrent[0][1][1] > 1) {
+          props.board[props.row][props.index + 2].piece = null;
+          props.board[props.row][props.index - 1].piece = <WRook />;
+        }
+
         break;
-      case 'WPawn' :
-        if(pos[0]===7){
-          props.piece.piece = <WQueen/>
+      case "Bking":
+        props.piece.piece = <Bking />;
+        if (props.setCurrent[0][1][1] - props.index > 1) {
+          props.board[props.row][props.index - 1].piece = null;
+          props.board[props.row][props.index + 1].piece = <BRook />;
+        }
+        if (props.index - props.setCurrent[0][1][1] > 1) {
+          props.board[props.row][props.index + 2].piece = null;
+          props.board[props.row][props.index - 1].piece = <BRook />;
+        }
+        break;
+      case "WPawn":
+        if (pos[0] === 7) {
+          props.piece.piece = <WQueen />;
           break;
         }
-        props.piece.piece = <WPawn/>
+        props.piece.piece = <WPawn />;
         break;
-      case 'BPawn' :
-        if(pos[0]===0){
-          props.piece.piece = <WQueen/>
+      case "BPawn":
+        if (pos[0] === 0) {
+          props.piece.piece = <WQueen />;
           break;
         }
-          props.piece.piece = <BPawn/>
-          break;
-      
+        props.piece.piece = <BPawn />;
+        break;
     }
 
-    if(props.enemy[0]==='B') props.enemy[1]('W')
-    else if(props.enemy[0]==='W') props.enemy[1]('B')
-    props.board[props.setCurrent[0][1][0]][props.setCurrent[0][1][1]].piece = null
+    if (props.enemy[0] === "B") props.enemy[1]("W");
+    else if (props.enemy[0] === "W") props.enemy[1]("B");
+    props.board[props.setCurrent[0][1][0]][props.setCurrent[0][1][1]].piece =
+      null;
     props.moveable[1]([]);
     props.setCurrent[1](null);
   };
@@ -97,7 +130,11 @@ export const Tile = (props) => {
         className={styles.whiteTile}
       >
         {props.piece.piece}
-        <div className={capturable ? styles.eatTile : MoveTile ? styles.moveTile : null }></div>
+        <div
+          className={
+            capturable ? styles.eatTile : MoveTile ? styles.moveTile : null
+          }
+        ></div>
       </div>
     );
   } else {
@@ -107,7 +144,11 @@ export const Tile = (props) => {
         className={styles.blackTile}
       >
         {props.piece.piece}
-        <div className={capturable ? styles.eatTile : MoveTile ? styles.moveTile : null }></div>
+        <div
+          className={
+            capturable ? styles.eatTile : MoveTile ? styles.moveTile : null
+          }
+        ></div>
       </div>
     );
   }
