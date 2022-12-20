@@ -4,7 +4,16 @@
   width: 40vw;
   height: 40vw;
 }
+@media screen and (max-width: 900px) {
+  .Frame {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90vw;
+    height: 90vw;
+  }
+}
 .App {
+  overflow: hidden;
   height: 100vh;
   display: flex;
   justify-content: center;

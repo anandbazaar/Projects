@@ -87,15 +87,18 @@ export const Board = (props) => {
     );
   }
 
-  const goRight = (x, y, t) => {
+  const goRight = (x, y, t, king) => {
     if (y > 7) return;
     if (board[x][y].piece !== null)
       if (board[x][y].piece.type.name.slice(0, 1) === enemy) {
         t.push([x, y]);
         return;
       }
-    if (board[x][y].piece === null) t.push([x, y]);
-    else return;
+
+    if (king === false) {
+      if (board[x][y].piece === null) t.push([x, y]);
+      else return;
+    }
     goRight(x, y + 1, t);
   };
   const goLeft = (x, y, t) => {
@@ -273,46 +276,37 @@ export const Board = (props) => {
     goUpLeft(arr[0] - 1, arr[1] - 1, temp);
     s(temp);
   };
-  // const checkCastleLeft = (x, y, t, i) => {
-  //   if (y <= -1) return;
-  //   if (board[x][y].piece) {
-  //     if (board[x][y].piece.type.name.slice(1, 5) === "Rook" && i - y > 1)
-  //       t.push([x, y + 1]);
-  //     else return;
-  //   }
-  //   checkCastleLeft(x, y - 1, t, i);
-  // };
-  // const checkCastleRight = (x, y, t, i) => {
-  //   if (y >= 8) return;
-  //   if (board[x][y].piece.type.name.slice(1, 5) === "Rook" && y - i > 1)
-  //     t.push([x, y - 2]);
-  //   checkCastleRight(x, y + 1, t, i);
-  // };
 
   const checkCastle = (x, y, t) => {
-    // checkCastleLeft(x, y, temp, i);
-    // checkCastleRight(x, y, temp, i);
     if (x === 0 || x === 7)
+      if (board[x][0].piece)
+        if (
+          board[x][0].piece.type.name.slice(1, 5) === "Rook" &&
+          board[x][1].piece === null &&
+          board[x][2].piece === null
+        ) {
+          t.push([x, 1]);
+        }
+    if (board[x][7].piece)
       if (
-        board[x][0].piece.type.name.slice(1, 5) === "Rook" &&
-        board[x][1].piece === null &&
-        board[x][2].piece === null
+        board[x][7].piece.type.name.slice(1, 5) === "Rook" &&
+        board[x][6].piece === null &&
+        board[x][5].piece === null &&
+        board[x][4].piece === null
       ) {
-        t.push([x, 1]);
+        t.push([x, 5]);
       }
-    if (
-      board[x][7].piece.type.name.slice(1, 5) === "Rook" &&
-      board[x][6].piece === null &&
-      board[x][5].piece === null &&
-      board[x][4].piece === null
-    ) {
-      t.push([x, 5]);
-    }
+  };
+  const checkCheck = (x, y, c) => {
+    goRight(x, y, c, true);
+    console.log(c);
   };
   const King = (arr, s) => {
     const [x, y] = arr;
     const temp = [];
+    const checking = [];
     checkCastle(x, y, temp, y);
+    checkCheck(x, y, checking);
     if (
       x > 0 &&
       (board[x - 1][y].piece === null ||
