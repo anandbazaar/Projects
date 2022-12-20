@@ -1,6 +1,6 @@
 export const BBishop = () =>{
   return(
-    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="45" height="45">
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 45 45">
   <g style={{opacity:'1', fill:'none', fillRule:'evenodd', fillOpacity:'1', stroke:'#000000', strokeWidth:'1.5', strokeLinecap:'round',
    strokeLinejoin:'round', strokeMiterlimit:'4', strokeDasharray:'none', strokeOpacity:'1'}}>
     <g style={{fill:'#000000', stroke:'#000000', strokeLinecap:'butt'}}>

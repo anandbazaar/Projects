@@ -1,6 +1,6 @@
 export const Bking = () => {
   return(
-    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="45" height="45">
+    <svg viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" version="1.1" >
   <g style={{fill:'none', fillOpacity:'1', fillRule:'evenodd', stroke:'#000000', strokeWidth:'1.5', strokeLinecap:'round',strokeLinejoin:'round',strokeMiterlimit:'4', strokeDasharray:'none', strokeOpacity:'1'}}>
     <path d="M 22.5,11.63 L 22.5,6" style={{fill:'none', stroke:'#000000', strokeLinejoin:'miter',}} id="path6570"/>
     <path d="M 22.5,25 C 22.5,25 27,17.5 25.5,14.5 C 25.5,14.5 24.5,12 22.5,12 C 20.5,12 19.5,14.5 19.5,14.5 C 18,17.5 22.5,25 22.5,25" style={{fill:'#000000',fillOpacity:'1', strokeLinecap:'butt', strokeLinejoin:'miter'}}/>
