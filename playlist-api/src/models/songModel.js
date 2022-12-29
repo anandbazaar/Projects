@@ -1,7 +1,5 @@
 const { Schema, Types, model } = require("mongoose");
 const songSchema = new Schema({
-  playlistId: Types.ObjectId,
-
   title: {
     type: String,
     required: true,

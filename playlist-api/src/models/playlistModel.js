@@ -22,6 +22,7 @@ const playlistSchema = new Schema({
     type: Boolean,
     required: true,
   },
+  songs: [{ type: Schema.Types.ObjectId, ref: "song" }],
 });
 const playlist = model("Playlist", playlistSchema);
 module.exports = playlist;
