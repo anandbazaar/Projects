@@ -1,0 +1,39 @@
+*{
+    box-sizing: border-box;
+}
+.card{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 3%;
+    background-color: rgb(24,24,24);
+    width: 25vw;
+    height: 37vw;
+    border-radius: 5px;
+    border: 1px solid black;
+
+}
+.title{
+    height: 4vw;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    color: white;
+    font-size: 17px;
+    font-family: 'Montserrat', sans-serif;
+}
+.description{
+    font-size: 15px;
+    height: 4vw;
+    display: flex;
+    font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    color: rgb(167, 167, 167)
+}
+.coverArt{
+    border-radius: 5%;
+    width:22vw;
+    height: 22vw;
+   background-image: url('https://picsum.photos/200');
+   background-size: cover;
+}

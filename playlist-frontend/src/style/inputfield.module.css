@@ -1,0 +1,8 @@
+.inputField{
+    display: flex;
+    top:50%;
+    background-color: black;
+    width:80vw;
+    height:10vh;
+    position: absolute;
+}
