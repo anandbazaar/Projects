@@ -1,9 +1,10 @@
-.songcard{
-    height: 100%;
-    height:30px;
-    display: flex;
-    flex-direction: row;
-    color: white;
-    justify-content: space-between;
-    border: 2px gray solid;
+.songcard {
+  height: 100%;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  color: white;
+  background-color: black;
+  justify-content: space-between;
+  border: 2px gray solid;
 }
