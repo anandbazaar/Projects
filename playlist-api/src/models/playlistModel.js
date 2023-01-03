@@ -22,6 +22,10 @@ const playlistSchema = new Schema({
     type: Boolean,
     required: true,
   },
+  createdBy: {
+    type: String,
+    required: true,
+  },
   songs: [{ type: Schema.Types.ObjectId, ref: "song" }],
 });
 const playlist = model("Playlist", playlistSchema);

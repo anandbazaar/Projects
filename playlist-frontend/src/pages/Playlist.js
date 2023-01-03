@@ -9,6 +9,7 @@ export const Playlist = () => {
   const [index, setIndex] = useState(null);
   const [playlistArr, setPlaylistArr] = useState(null);
   const baseurl = "http://localhost:3030/";
+  const uid = localStorage.getItem("uid");
   useEffect(() => {
     axios.get(baseurl + "playlists").then((res) => {
       setPlaylistArr(res.data);
@@ -27,6 +28,7 @@ export const Playlist = () => {
                 <Card
                   index={i}
                   setIndex={setIndex}
+                  creator={playlistArr[i].createdBy}
                   songs={playlistArr[i].songs}
                   description={playlistArr[i].description}
                   title={playlistArr[i].title}
