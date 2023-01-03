@@ -3,6 +3,7 @@ import axios from "../../node_modules/axios/index";
 import { AddToPlaylist, Songcard } from "../components";
 export const Songs = () => {
   const baseurl = "http://localhost:3030/";
+  const [song,setSong] = useState()
   const [songArr, setSongArr] = useState(null);
   const [isShown, setIsShown] = useState(false);
   useEffect(() => {
@@ -23,10 +24,10 @@ export const Songs = () => {
                   title={x.title}
                   key={i}
                 />
-                <button
+                <button   
                   onClick={() => {
                     setIsShown(true);
-                    console.log(x);
+                    setSong(x)
                   }}
                 >
                   +
@@ -35,7 +36,7 @@ export const Songs = () => {
             );
           })
         : console.log("asd")}
-      {isShown && <AddToPlaylist />}
+      {isShown && <AddToPlaylist song ={song}/>}
     </div>
   );
 };

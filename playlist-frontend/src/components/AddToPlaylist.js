@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "../../node_modules/axios/index";
-export const AddToPlaylist = () => {
+export const AddToPlaylist = (props) => {
+  console.log(props.song)
   const baseurl = "http://localhost:3030/";
   const [playlist, setPlaylist] = useState(null);
   useEffect(() => {
@@ -10,7 +11,9 @@ export const AddToPlaylist = () => {
     });
   }, []);
   const add = (x) => {
-    console.log(x);
+    axios.put(baseurl + "playlist/" + x._id + '?id=' + props.song._id).then((res)=>{
+      console.log(res)
+    })
   };
   return (
     <div>

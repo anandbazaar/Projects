@@ -11,11 +11,18 @@ app.use(express.json());
 app.use(cors());
 connect();
 const Cat = mongoose.model("Cat", { name: String });
+const Dog = mongoose.model("Dog",{name: String})
 
 app.get("/cats", async (req, res) => {
   const data = await Cat.find({});
   res.send(data);
 });
+app.post("/dogs", async (req,res)=>{
+  const name = req.body;
+  const temp = new Dog(name);
+  await temp.save();
+  res.send('woof')
+})
 app.post("/cats", async (req, res) => {
   const name = req.body;
   const kitty = new Cat(name);
