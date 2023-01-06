@@ -7,7 +7,6 @@ exports.createPlaylist = async (req, res) => {
 };
 
 exports.getPlaylists = async (req, res) => {
-  const playlistId = req.params.id;
   const data = await playlist.find({}).populate("songs");
   res.send(data);
 };

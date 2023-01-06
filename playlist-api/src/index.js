@@ -3,6 +3,7 @@ const cors = require("cors");
 const connect = require("./db");
 const { playlistRoutes } = require("./routes");
 const { songRoutes } = require("./routes");
+const { userRoutes } = require("./routes/userRoutes");
 
 const port = process.env.PORT || 3030;
 const app = express();
@@ -11,6 +12,7 @@ app.use(express.json({ limit: "20MB" }));
 app.use(cors());
 app.use(playlistRoutes);
 app.use(songRoutes);
+app.use(userRoutes);
 
 connect();
 
