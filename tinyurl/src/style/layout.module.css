@@ -1,0 +1,9 @@
+.navbar{
+    position: absolute;
+    top:1vh;
+    right: 3vw;
+    width:fit-content
+}
+.main{
+    position: relative;
+}
