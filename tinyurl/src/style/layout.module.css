@@ -1,9 +1,6 @@
-.navbar{
-    position: absolute;
-    top:1vh;
-    right: 3vw;
-    width:fit-content
-}
-.main{
-    position: relative;
+.nav {
+  position: absolute;
+  right: 0px;
+  box-shadow: -10px -10px 100px black;
+  transition: 300ms;
 }

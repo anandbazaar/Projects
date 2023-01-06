@@ -6,7 +6,7 @@ export const Signup = () => {
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const baseurl = "http://localhost:3030/";
+  const baseurl = "https://playlist-api.onrender.com/";
   const register = () => {
     const user = {
       username: username,

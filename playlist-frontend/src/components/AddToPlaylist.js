@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "../../node_modules/axios/index";
 export const AddToPlaylist = (props) => {
   console.log(props.song);
-  const baseurl = "http://localhost:3030/";
+  const baseurl = "https://playlist-api.onrender.com/";
   const [playlist, setPlaylist] = useState(null);
   const uid = localStorage.getItem("uid");
   useEffect(() => {

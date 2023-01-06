@@ -1,5 +1,24 @@
-.test{
-    width:100vw;
-    height:100vh;
-    background-color: lightblue;
+.head {
+  top: 1vh;
+
+  position: fixed;
+  padding-left: 3vw;
+  align-items: center;
+  display: flex;
+  width: 100vw;
+}
+.back {
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+}
+.shorter {
+  margin-left: 3vw;
+  width: 20%;
+  height: fit-content;
+  background-color: rgb(244, 244, 244);
+  border-radius: 1em;
+  padding: 1%;
 }

@@ -5,7 +5,7 @@ export const Inputfield = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [privatee, setPrivate] = useState(false);
-  const baseurl = "http://localhost:3030/";
+  const baseurl = "https://playlist-api.onrender.com/";
   const uid = localStorage.getItem("uid");
   console.log(uid);
   const createPlaylist = () => {
