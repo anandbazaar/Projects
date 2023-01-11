@@ -1,0 +1,16 @@
+.urllist{
+    display: flex;
+    align-items: center;
+    width:80%;
+    height:5vh;
+    border-bottom: 1px gray solid;
+    justify-content: space-between;
+}
+.oldurl{
+    display: flex;
+    width: 50%;
+}
+.newurl{
+    display: flex;
+    width:50%
+}

@@ -1,16 +1,17 @@
 .main {
-  animation: slidein 1s;
   width: 30vw;
   height: 100vh;
   background-color: white;
-  position: absolute;
   right: 0px;
+  position: relative;
 }
-@keyframes slidein {
-  from {
-    right: -21vw;
-  }
-  to {
-    top: 0x;
-  }
+.myurls{
+  position: absolute;
+  top: 10%;
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
+

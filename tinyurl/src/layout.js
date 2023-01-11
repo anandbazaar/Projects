@@ -8,7 +8,7 @@ export const Layout = () => {
     <div>
       <div className={styles.nav}>
         <Navbar />
-        <Outlet className={styles.outlet} />
+        <Outlet />
       </div>
       <Home />
     </div>

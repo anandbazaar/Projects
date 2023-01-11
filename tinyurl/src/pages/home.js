@@ -2,30 +2,34 @@ import styles from "../style/home.module.css";
 import Button from "react-bootstrap/Button";
 import { Logo } from "../assets/";
 import { Form } from "react-bootstrap";
-// import "bootstrap/dist/css/bootstrap.min.css";
 import { useState } from "react";
+import axios from "axios";
 export const Home = () => {
   const [url, setUrl] = useState("");
+  const baseurl = 'http://localhost:3050/'
+
+  const makeUrl = () =>{
+    if(url === "") return
+    const body = {
+      longUrl: url,
+      tinyUrl: 'http://localhost:3000/' + Math.floor(Math.random() * 999999).toString(),
+      createdBy: 'me',
+    }
+    axios.post(baseurl + 'tiny',body).then((res)=>{
+      console.log(res)
+    })
+  }
+
   return (
     <div className={styles.back}>
       <div className={styles.head}>
         <Logo />
       </div>
       <div className={styles.shorter}>
-        {/* <Form value={url}>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Enter a long URL to make a TinyURL</Form.Label>
-            <Form.Control size="lg" />
-          </Form.Group>
-          <div className="d-grid gap-2">
-            <Button size="lg" variant="success">
-              Make TinyURL!
-            </Button>
-          </div>
-        </Form> */}
+
         <p>Enter a long URL to make a TinyURL</p>
-        <input></input> <br></br>
-        <button>Make TinyURL!</button>
+        <input value={url} onChange={(e)=>{setUrl(e.target.value)}}></input> <br></br>
+        <button onClick={makeUrl}>Make TinyURL!</button>  
       </div>
     </div>
   );
