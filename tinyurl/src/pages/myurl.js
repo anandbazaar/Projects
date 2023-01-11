@@ -1,9 +1,8 @@
+import styles from "../style/myurl.module.css";
 export const MyUrl = () => {
-    return(
-    <div>
-        <div>
-            MyUrl
-        </div>
+  return (
+    <div className={styles.main}>
+      <div>myurl</div>
     </div>
-    )
-}
+  );
+};

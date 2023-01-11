@@ -8,7 +8,7 @@ export const Playlist = () => {
   const [isShown, setIsShown] = useState(false);
   const [index, setIndex] = useState(null);
   const [playlistArr, setPlaylistArr] = useState(null);
-  const baseurl = "http://localhost:3030/";
+  const baseurl = "https://playlist-api.onrender.com/";
   const uid = localStorage.getItem("uid");
   useEffect(() => {
     axios.get(baseurl + "playlists").then((res) => {
@@ -26,7 +26,6 @@ export const Playlist = () => {
           ? playlistArr.map((x, i) => {
               return (
                 <Card
-                  index={i}
                   setIndex={setIndex}
                   creator={playlistArr[i].createdBy}
                   songs={playlistArr[i].songs}

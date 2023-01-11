@@ -1,0 +1,16 @@
+.main {
+  animation: slidein 1s;
+  width: 30vw;
+  height: 100vh;
+  background-color: white;
+  position: absolute;
+  right: 0px;
+}
+@keyframes slidein {
+  from {
+    right: -21vw;
+  }
+  to {
+    top: 0x;
+  }
+}
