@@ -2,11 +2,13 @@ import styles from "../style/home.module.css";
 import Button from "react-bootstrap/Button";
 import { Logo } from "../assets/";
 import { Form } from "react-bootstrap";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import axios from "axios";
+import { UserContext } from "../common/UserContext";
 export const Home = () => {
   const [url, setUrl] = useState("");
   const baseurl = "http://localhost:3030/";
+  const user = useContext(UserContext);
 
   const makeUrl = () => {
     if (url === "") return;
@@ -15,11 +17,17 @@ export const Home = () => {
       tinyUrl:
         "http://localhost:3030/myurl/" +
         Math.floor(Math.random() * 999999).toString(),
-      createdBy: "me",
+      createdBy: user.uid,
     };
-    axios.post(baseurl + "tiny", body).then((res) => {
-      console.log(res);
-    });
+    axios
+      .post(baseurl + "tiny", body, {
+        headers: {
+          authorization: user.token,
+        },
+      })
+      .then((res) => {
+        console.log(res);
+      });
   };
 
   return (

@@ -1,7 +1,9 @@
 const url = require("../models/url.module");
 
 exports.getUrls = async (req, res) => {
-  const body = await url.find({});
+  const body = await url.find({
+    createdBy: req.query.id,
+  });
   console.log(body);
   res.send(body);
 };
