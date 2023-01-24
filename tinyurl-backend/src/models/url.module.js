@@ -1,23 +1,22 @@
-const { Schema,model } = require('mongoose')
+const { Schema, model, Types } = require("mongoose");
 
 const urlschema = new Schema({
-    
-    longUrl: {
-        type: String,
-        required: true
-    },
-    tinyUrl: {
-        type: String,
-        required: true
-    },
-    createdAt: {
-        type: Date,
-        default: Date.now()
-    },
-    createdBy: {
-        type: String,
-        required: true
-    }
-})
+  longUrl: {
+    type: String,
+    required: true,
+  },
+  tinyUrl: {
+    type: String,
+    required: true,
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now(),
+  },
+  createdBy: {
+    type: String,
+    required: true,
+  },
+});
 const url = model("url", urlschema);
-module.exports = url
+module.exports = url;
