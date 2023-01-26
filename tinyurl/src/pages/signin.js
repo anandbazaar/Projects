@@ -28,6 +28,7 @@ export const Signin = () => {
     axios.post(baseurl + "login", body).then((res) => {
       console.log(res.data);
       localStorage.setItem("token", res.data);
+      window.location.reload();
     });
   };
 

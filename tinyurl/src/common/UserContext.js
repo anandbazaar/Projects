@@ -1,11 +1,14 @@
 import { createContext, useState } from "react";
+import jwt_decode from "jwt-decode";
 
 export const UserContext = createContext({});
 export const UserProvider = ({ children }) => {
-  const token = localStorage.getItem("token")
-  var base64Url = token.split(".")[1];
-  var base64 = base64Url.replace("-", "+").replace("_", "/");
-  const [user, setUser] = useState({...JSON.parse(atob(base64)), token })
+  const token = localStorage.getItem("token");
+  var decoded;
+  if (token !== "null") decoded = jwt_decode(token);
+  else decoded = null;
 
-  return <UserContext.Provider value={user}>{children}</UserContext.Provider>;
+  return (
+    <UserContext.Provider value={decoded}>{children}</UserContext.Provider>
+  );
 };

@@ -5,7 +5,7 @@
   right: 0px;
   position: relative;
 }
-.myurls{
+.myurls {
   position: absolute;
   top: 10%;
   height: fit-content;
@@ -14,4 +14,10 @@
   align-items: center;
   flex-direction: column;
 }
-
+.paga {
+  position: absolute;
+  bottom: 5%;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
